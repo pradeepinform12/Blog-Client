@@ -12,7 +12,7 @@ export default function CallToAction() {
           Check our 100 js projects website and start building your own projects
         </p>
         <a
-          href='https://www.100jsprojects.com/'
+          href='/'
           target='_blank'
           rel='noopener noreferrer'
         >
