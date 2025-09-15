@@ -5,10 +5,10 @@ import PostCard from '../components/PostCard';
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
-
+  const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL;
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch('/api/post/getPosts');
+      const res = await fetch(`${API_BASE}/api/post/getPosts`);
       const data = await res.json();
       setPosts(data.posts);
     };
