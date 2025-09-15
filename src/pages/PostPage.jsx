@@ -16,25 +16,41 @@ export default function PostPage() {
     const fetchPost = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`https://blog-server-4agn.onrender.com/api/post/getposts?slug=${postSlug}`);
-        const data = await res.json();
+
+        const res = await fetch(
+          `https://blog-server-4agn.onrender.com/api/post/getposts?slug=${postSlug}`
+        );
+
         if (!res.ok) {
+          console.error("Failed response:", res.status);
           setError(true);
           setLoading(false);
           return;
         }
-        if (res.ok) {
+
+        const data = await res.json();
+
+        if (data.posts.length === 0) {
+          console.warn("No post found for slug:", postSlug);
+          setError(true);
+        } else {
           setPost(data.posts[0]);
-          setLoading(false);
           setError(false);
         }
+
+        setLoading(false);
       } catch (error) {
+        console.error("Fetch error:", error);
         setError(true);
         setLoading(false);
       }
     };
-    fetchPost();
+
+    if (postSlug) {   // 👈 empty slug pe call hi mat karo
+      fetchPost();
+    }
   }, [postSlug]);
+
 
   useEffect(() => {
     try {
