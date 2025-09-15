@@ -11,46 +11,30 @@ export default function PostPage() {
   const [error, setError] = useState(false);
   const [post, setPost] = useState(null);
   const [recentPosts, setRecentPosts] = useState(null);
-
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL;
   useEffect(() => {
     const fetchPost = async () => {
       try {
         setLoading(true);
-
-        const res = await fetch(
-          `https://blog-server-4agn.onrender.com/api/post/getposts?slug=${postSlug}`
-        );
-
+        const res = await fetch(`${API_BASE}/api/post/getposts?slug=${postSlug}`);
+        const data = await res.json();
         if (!res.ok) {
-          console.error("Failed response:", res.status);
           setError(true);
           setLoading(false);
           return;
         }
-
-        const data = await res.json();
-
-        if (data.posts.length === 0) {
-          console.warn("No post found for slug:", postSlug);
-          setError(true);
-        } else {
+        if (res.ok) {
           setPost(data.posts[0]);
+          setLoading(false);
           setError(false);
         }
-
-        setLoading(false);
       } catch (error) {
-        console.error("Fetch error:", error);
         setError(true);
         setLoading(false);
       }
     };
-
-    if (postSlug) {   // 👈 empty slug pe call hi mat karo
-      fetchPost();
-    }
+    fetchPost();
   }, [postSlug]);
-
 
   useEffect(() => {
     try {
