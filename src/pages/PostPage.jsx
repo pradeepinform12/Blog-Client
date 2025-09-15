@@ -39,7 +39,7 @@ const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL;
   useEffect(() => {
     try {
       const fetchRecentPosts = async () => {
-        const res = await fetch(`/api/post/getposts?limit=3`);
+        const res = await fetch(`${API_BASE}/api/post/getposts?limit=3`);
         const data = await res.json();
         if (res.ok) {
           setRecentPosts(data.posts);
