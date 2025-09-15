@@ -11,7 +11,7 @@ export default function PostPage() {
   const [error, setError] = useState(false);
   const [post, setPost] = useState(null);
   const [recentPosts, setRecentPosts] = useState(null);
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL;
+  const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL;
   useEffect(() => {
     const fetchPost = async () => {
       try {
