@@ -5,17 +5,26 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  //   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  apiKey: "AIzaSyDjjCGbim5t6_G8i2HPkGCZNIl_xTesNjs",
-  authDomain: "softech-blog.firebaseapp.com",
-  projectId: "softech-blog",
-  storageBucket: "softech-blog.appspot.com",
-  messagingSenderId: "927428038867",
-  appId: "1:927428038867:web:21af4135b38012d8330426",
-  measurementId: "G-W5VTNSFSDN"
-};
+// const firebaseConfig = {
+//   //   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+//   apiKey: "AIzaSyDjjCGbim5t6_G8i2HPkGCZNIl_xTesNjs",
+//   authDomain: "softech-blog.firebaseapp.com",
+//   projectId: "softech-blog",
+//   storageBucket: "softech-blog.appspot.com",
+//   messagingSenderId: "927428038867",
+//   appId: "1:927428038867:web:21af4135b38012d8330426",
+//   measurementId: "G-W5VTNSFSDN"
+// };
 
+const firebaseConfig = {
+  apiKey: "AIzaSyDHNSkAYmbO2uk6MnpmmtECsXs67D8hhRA",
+  authDomain: "blog-artical.firebaseapp.com",
+  projectId: "blog-artical",
+  storageBucket: "blog-artical.firebasestorage.app",
+  messagingSenderId: "490839225",
+  appId: "1:490839225:web:c085904c8371f41a478f68",
+  measurementId: "G-0B7L36VYT6"
+};
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 //const analytics = getAnalytics(app);
