@@ -118,8 +118,6 @@ Browser -> Client App -> Pages (Home, Post, Editor, Auth) -> Services/API layer 
 Add license (e.g., MIT). Update LICENSE file accordingly.
 
 ---
-Agar chaho to main ye README directly repo mein push kar ke ek branch pe commit kar dunga — batao agar push karwana hai.
-
 # Proposed Folder Structure for Blog-Client
 
 Ye ek suggested folder structure hai — tumhare actual project ke hisaab se adapt kar lo.
